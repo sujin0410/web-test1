@@ -25,6 +25,7 @@ if(rs.next()){
 이름 : <input type="text" name="uiName" value="<%=rs.getString("UI_NAME")%>"><br>
 <input type="hidden" name="uiNum" value="<%=rs.getString("UI_NUM")%>">
 <button>수정</button>
+<button>삭제</button>
 </form>
 <%
 }else{
