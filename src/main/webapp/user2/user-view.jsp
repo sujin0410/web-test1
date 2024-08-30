@@ -1,5 +1,5 @@
-<%@page import="test.web.common.DBCon"%>
 <%@page import="java.sql.*"%>
+<%@page import="test.web.common.DBCon"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,7 +9,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <%
 String uiNum = request.getParameter("uiNum");
 Connection con = DBCon.getCon();
@@ -18,7 +17,7 @@ String sql = "SELECT * FROM user_info WHERE UI_NUM=" + uiNum;
 ResultSet rs = stmt.executeQuery(sql);
 if(rs.next()){
 %>		
-<form action="/user/user-update-ok.jsp" method="GET" id="frm">
+<form action="/user2/user-update-ok.jsp" method="GET" id="frm">
 번호 : <%=rs.getString("UI_NUM")%><br>
 아이디 : <input type="text" name="uiId" value="<%=rs.getString("UI_ID")%>"><br>
 비밀번호 : <input type="text" name="uiPwd" value="<%=rs.getString("UI_PWD")%>"><br>
@@ -31,7 +30,7 @@ if(rs.next()){
 function changeAction(){
 	debugger;
 	const frm = document.querySelector('#frm');
-	frm.action = '/user/user-delete-ok.jsp';
+	frm.action = '/user2/user-delete-ok.jsp';
 	frm.submit();
 }
 </script>
@@ -39,10 +38,12 @@ function changeAction(){
 }else{
 %>
 조회하신 유저가 이미 탈퇴되었습니다.<br>
-<a href="/user/user-list.jsp">돌아가기</a>
+<a href="/user2/user-list.jsp">돌아가기</a>
 <%
 }
 %>
+
+
 
 
 </body>

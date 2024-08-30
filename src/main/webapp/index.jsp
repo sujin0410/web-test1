@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-안녕, 반갑다 친구야~<br>
-수진
+안녕, 반갑다. 친구야~<br>
+수정2111
 <a href="/user/user-list.jsp">유저리스트</a>
 </body>
 </html>
